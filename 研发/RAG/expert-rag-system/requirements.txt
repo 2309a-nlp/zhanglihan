@@ -1,0 +1,35 @@
+# ===== Expert RAG System Python 依赖 =====
+
+# --- Web 服务 ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-dotenv==1.0.1
+
+# --- LangChain 生态 ---
+langchain-core==0.3.40
+langchain-openai==0.3.7
+langchain-community==0.3.19
+langchain-text-splitters==0.3.7
+
+# --- 嵌入模型（bge-m3）---
+sentence-transformers>=3.4.1
+torch>=2.5.0
+
+# --- 重排序模型（bge-reranker-v2-m3）---
+transformers>=4.48.0
+
+# --- 中文分词 ---
+jieba>=0.42.1
+
+# --- 向量数据库 ---
+pymilvus>=2.5.0
+
+# --- 长期记忆（MySQL）---
+pymysql>=1.1.1
+
+# --- 文档加载 ---
+python-docx>=1.1.2
+
+# --- 评估（可选，RAGAS）---
+# ragas>=0.2.14  # 按需安装
+# openai>=1.0.0  # ragas 需要
