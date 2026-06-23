@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📅 日程提醒智能体</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-left">
+                <span class="logo">📅</span>
+                <h1 class="app-title">日程提醒智能体</h1>
+            </div>
+            <div class="header-right">
+                <span class="status-dot" id="statusDot" title="连接状态"></span>
+                <span class="status-text" id="statusText">就绪</span>
+            </div>
+        </header>
+
+        <main class="chat-container" id="chatContainer">
+            <div class="welcome-message" id="welcomeMessage">
+                <div class="welcome-icon">📅</div>
+                <h2>您好！我是您的日程提醒管家~</h2>
+                <p>告诉我您的日程安排，我会帮您记录并及时提醒！</p>
+                <div class="example-chips">
+                    <button class="chip" onclick="sendExample('我今天的日程有哪些？')">📋 我今天的日程有哪些？</button>
+                    <button class="chip" onclick="sendExample('提醒我买咖啡')">☕ 提醒我买咖啡</button>
+                    <button class="chip" onclick="sendExample('明天下午3点开会')">📅 明天下午3点开会</button>
+                    <button class="chip" onclick="sendExample('取消日程1')">❌ 取消日程1</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="input-container">
+            <div class="input-wrapper">
+                <textarea
+                    id="messageInput"
+                    class="message-input"
+                    placeholder="输入您的日程需求..."
+                    rows="1"
+                ></textarea>
+                <button id="sendButton" class="send-button" title="发送">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <div id="reminderToast" class="reminder-toast" style="display:none;">
+        <div class="reminder-content">
+            <span class="reminder-icon">⏰</span>
+            <span id="reminderText"></span>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
