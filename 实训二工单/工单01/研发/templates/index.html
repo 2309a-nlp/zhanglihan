@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📒 智能记账本</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 顶部导航栏 -->
+        <header class="app-header">
+            <div class="header-left">
+                <span class="logo">📒</span>
+                <h1 class="app-title">智能记账本</h1>
+            </div>
+            <div class="header-right">
+                <span class="status-dot" id="statusDot" title="连接状态"></span>
+                <span class="status-text" id="statusText">就绪</span>
+            </div>
+        </header>
+
+        <!-- 功能标签栏 -->
+        <nav class="feature-tabs">
+            <button class="feature-tab active" data-filter="all">全部</button>
+            <button class="feature-tab" data-filter="expense">💸 支出</button>
+            <button class="feature-tab" data-filter="income">💰 收入</button>
+            <button class="feature-tab" data-filter="query">🔍 查询</button>
+            <button class="feature-tab" data-filter="delete">🗑️ 删除</button>
+        </nav>
+
+        <!-- 聊天消息区域 -->
+        <main class="chat-container" id="chatContainer">
+            <div class="welcome-message" id="welcomeMessage">
+                <div class="welcome-icon">📒</div>
+                <h2>您好，欢迎使用咱们小家专属记账本！</h2>
+                <p>请按照"x年x月x日，谁做什么事收入/支出多少钱"的格式来输入。<br>请告诉我你的账目需求吧~</p>
+                <div class="example-chips">
+                    <span class="chip-title">💸 记支出：</span>
+                    <button class="chip expense-chip" onclick="sendExample('今天买三体花了50元')">📚 今天买三体花了50元</button>
+                    <button class="chip expense-chip" onclick="sendExample('请同事吃饭花了320元')">🍽️ 请同事吃饭花了320元</button>
+
+                    <span class="chip-title">💰 记收入：</span>
+                    <button class="chip income-chip" onclick="sendExample('今天发了工资8000元')">💼 今天发了工资8000元</button>
+                    <button class="chip income-chip" onclick="sendExample('收到项目奖金2000元')">🎁 收到项目奖金2000元</button>
+
+                    <span class="chip-title">🔍 查账单：</span>
+                    <button class="chip query-chip" onclick="sendExample('我这个月花了多少钱')">📊 我这个月花了多少钱</button>
+                    <button class="chip query-chip" onclick="sendExample('我这个月赚了多少')">📈 我这个月赚了多少</button>
+                    <button class="chip query-chip" onclick="sendExample('我的财务状况怎么样')">💡 我的财务状况怎么样</button>
+
+                    <span class="chip-title">🗑️ 删记录：</span>
+                    <button class="chip delete-chip" onclick="sendExample('查一下最近的支出')">🔍 先查记录</button>
+                    <button class="chip delete-chip" onclick="sendExample('删除三体那条记录')">🗑️ 删除三体那条记录</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- 输入区域 -->
+        <footer class="input-container">
+            <div class="input-wrapper">
+                <textarea
+                    id="messageInput"
+                    class="message-input"
+                    placeholder="输入记录或查询... 支出/收入/查询/删除"
+                    rows="1"
+                    maxlength="500"
+                ></textarea>
+                <button class="send-button" id="sendButton" title="发送">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+            <p class="input-hint">按 Enter 发送，Shift+Enter 换行</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
